@@ -1,0 +1,54 @@
+.contact-form {
+  color:rgb(255, 255, 255);
+  background-color: #0e042c;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 95%;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.733);
+}
+
+.new-contact__controls {
+  display: block;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.new-contact__control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem auto;
+  margin: 9px 400px 5px 0;
+  margin-left: 1.0rem;
+  display: block;
+  padding: 0.5rem;
+}
+
+.new-contact__control input {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 50rem;
+  max-width: 100%;
+}
+
+.new-contact__actions {
+    text-align: center;
+}
+
+.add-contact {
+  background-color: #8277a3;
+  color:rgb(10, 11, 36);
+  font: inherit;
+  font-weight: bold;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  width: 16rem;
+  max-width: 95%;
+  border-radius: 14px;
+  text-align: center;
+}
