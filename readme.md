@@ -1,6 +1,6 @@
 # Notes
 
-## Technology Enterprice Edition 
+## Technology Enterprise Edition 
 
 This is a readme for the different features of Travel Net Solution's Mapping Solution
 
