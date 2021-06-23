@@ -1,13 +1,13 @@
 .contact-form {
   color:rgb(255, 255, 255);
   background-color: #0e042c;
-  padding: 1rem;
-  margin: 2rem auto;
+  padding: 0.5rem;
   width: 50rem;
   max-width: 95%;
   border-radius: 12px;
   text-align: left;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.733);
+  margin: 2rem auto;
 }
 
 .new-contact__controls {
@@ -38,6 +38,7 @@
 
 .new-contact__actions {
     text-align: center;
+    margin: 20px 4px -10px 0;  
 }
 
 .add-contact {

@@ -3,6 +3,7 @@ import "./ContactForm.css";
 import Card from "../UI/Card";
 import Header from "../UI/Header";
 import axios from "axios";
+import ContactMap from "./ContactMap";
 
 const ContactForm = () => {
   const [enteredDomain, setDomain] = useState("");
@@ -13,6 +14,7 @@ const ContactForm = () => {
   const [enteredDestTable, setDestTable] = useState("");
   const [enteredCustInfo, setCustInfo] = useState("");
   const [enteredMigPhase, setMigPhase] = useState("");
+  const [ResponseCode, setResponseCode] = useState("");
 
   const domainChangeHandler = (event) => {
     setDomain(event.target.value);
@@ -46,6 +48,14 @@ const ContactForm = () => {
     setMigPhase(event.target.value);
   };
 
+  const popupPostHandler = (event) => {
+    if (ResponseCode === 200) {
+      alert("Contact Mappings Posting: Successfull!");
+    } else {
+      alert("Posting Contact API Form");
+    }
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
     const payload = {
@@ -62,7 +72,7 @@ const ContactForm = () => {
     const headers = {
       "Acess-Control-Allow-Credentials": "true",
       "Access-Control-Allow-Origin": "*",
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     };
 
     axios
@@ -70,10 +80,18 @@ const ContactForm = () => {
         headers: headers,
       })
       .then((response) => {
-        console.log(response);
+        console.log(response.status);
+        setResponseCode(response.status);
+        if (response.status === 200) {
+          alert("Contact API Mapping: Form Posted");
+        }
+      })
+      .catch((error) => {
+          alert("Contact API Mapping: Connection Refused");
       });
 
     console.log("payload: ", JSON.stringify(payload));
+
     setDomain("");
     setLocaldb("");
     setEnv("");
@@ -155,12 +173,19 @@ const ContactForm = () => {
               />
             </div>
             <div className="new-contact__actions">
-              <button className="add-contact" type="submit">
+              <button
+                className="add-contact"
+                type="submit"
+                onClick={popupPostHandler}
+              >
                 Post Mappings
               </button>
             </div>
           </form>
         </Card>
+      </div>
+      <div>
+        <ContactMap onPostResponseStatus={ResponseCode} />
       </div>
     </Header>
   );
