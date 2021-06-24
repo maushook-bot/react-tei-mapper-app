@@ -1,5 +1,5 @@
 .contact-form {
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   background-color: #0e042c;
   padding: 0.5rem;
   width: 50rem;
@@ -22,7 +22,7 @@
   font-weight: bold;
   margin-bottom: 0.5rem auto;
   margin: 9px 400px 5px 0;
-  margin-left: 1.0rem;
+  margin-left: 1rem;
   display: block;
   padding: 0.5rem;
 }
@@ -37,13 +37,13 @@
 }
 
 .new-contact__actions {
-    text-align: center;
-    margin: 20px 4px -10px 0;  
+  text-align: center;
+  margin: 20px 4px -10px 0;
 }
 
-.add-contact {
+.contact-form_post {
   background-color: #8277a3;
-  color:rgb(10, 11, 36);
+  color: rgb(10, 11, 36);
   font: inherit;
   font-weight: bold;
   padding: 1rem;
@@ -52,4 +52,10 @@
   max-width: 95%;
   border-radius: 14px;
   text-align: center;
+}
+
+.contact-form_post button:hover,
+.contact-form_post button:active {
+  background-color: #c51f19;
+  border-color: #510674;
 }

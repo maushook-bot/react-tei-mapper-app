@@ -1,0 +1,40 @@
+.new-contact {
+  background-color: #0e042c;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 95%;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.new-contact button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid #40005d;
+  background-color: #40005d;
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+.new-contact button:hover,
+.new-contact button:active {
+  background-color: #0abe0a;
+  border-color: #510674;
+}
+
+.new-contact button.alternative {
+  color: #220131;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.new-contact button.alternative:hover,
+.new-contact button.alternative:active {
+  background-color: #ddb3f8;
+}
+
+

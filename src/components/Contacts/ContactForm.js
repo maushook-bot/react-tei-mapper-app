@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./ContactForm.css";
-import Card from "../UI/Card";
-import Header from "../UI/Header";
 import axios from "axios";
 import ContactMap from "./ContactMap";
+import { useAlert } from "react-alert";
 
-const ContactForm = () => {
+
+const ContactForm = (props) => {
   const [enteredDomain, setDomain] = useState("");
   const [enteredLocaldb, setLocaldb] = useState("");
   const [enteredEnv, setEnv] = useState("");
@@ -15,6 +15,7 @@ const ContactForm = () => {
   const [enteredCustInfo, setCustInfo] = useState("");
   const [enteredMigPhase, setMigPhase] = useState("");
   const [ResponseCode, setResponseCode] = useState("");
+  const alert = useAlert();
 
   const domainChangeHandler = (event) => {
     setDomain(event.target.value);
@@ -50,9 +51,9 @@ const ContactForm = () => {
 
   const popupPostHandler = (event) => {
     if (ResponseCode === 200) {
-      alert("Contact Mappings Posting: Successfull!");
+      alert.show("Contact Mappings Posting: Successfull!");
     } else {
-      alert("Posting Contact API Form");
+      alert.show("Posting Contact API Form");
     }
   };
 
@@ -83,11 +84,11 @@ const ContactForm = () => {
         console.log(response.status);
         setResponseCode(response.status);
         if (response.status === 200) {
-          alert("Contact API Mapping: Form Posted");
+          alert.show("Contact API Mapping: Form Posted");
         }
       })
       .catch((error) => {
-          alert("Contact API Mapping: Connection Refused");
+        alert.show("Contact API Mapping: Connection Refused");
       });
 
     console.log("payload: ", JSON.stringify(payload));
@@ -102,11 +103,15 @@ const ContactForm = () => {
     setMigPhase("");
   };
 
+  const cancelHandler = () => {
+    props.onCancelCheck(false);
+  };
+
   return (
-    <Header>
-      <div className="contact-form">
-        <h2>Contact Mapping</h2>
-        <Card>
+    <div>
+        <div className="contact-form">
+          <h2>Contact Mapping</h2>
+
           <form onSubmit={submitHandler}>
             <div className="new-contact__control">
               <label>Domain</label>
@@ -174,20 +179,18 @@ const ContactForm = () => {
             </div>
             <div className="new-contact__actions">
               <button
-                className="add-contact"
+                className="contact-form_post"
                 type="submit"
-                onClick={popupPostHandler}
-              >
-                Post Mappings
+                onClick={popupPostHandler}>
+                Send Mappings
               </button>
+              <button className="contact-form_post" onClick={cancelHandler}>Cancel</button>
             </div>
           </form>
-        </Card>
-      </div>
-      <div>
-        <ContactMap onPostResponseStatus={ResponseCode} />
-      </div>
-    </Header>
+        </div>
+      <ContactMap onPostResponseStatus={ResponseCode} />
+     
+    </div>
   );
 };
 
