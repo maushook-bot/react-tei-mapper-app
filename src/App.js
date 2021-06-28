@@ -1,7 +1,7 @@
 /* @@@ REACT JS : Technology Enterprise Edition - Mappings API @@@
    @@@ BACKEND : FLASK FRAMEWORK @@@
    @@@ module: app.js @@@
-   @@@ version: 0.5 @@@
+   @@@ version: 1.0 @@@
 */
 
 import React from "react";
