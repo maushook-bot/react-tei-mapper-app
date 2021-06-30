@@ -29,12 +29,10 @@ const ContactBody = () => {
       <Card>
         <div className="new-contact">{bodyContactContent}</div>
 
-      <div className="new-contact">
-        <button>Contact Decoupler</button>
-      </div>
-    
+        <div className="new-contact">
+          <button>Contact Decoupler</button>
+        </div>
       </Card>
-
     </div>
   );
 };

@@ -34,6 +34,19 @@
   text-align: center;
 }
 
+.contact-map__awesome_background {
+  background-color: #e6e4ee;
+  color:rgb(255, 255, 255);
+  font: inherit;
+  font-weight: bold;
+  padding: 1rem;
+  margin: -20rem 6rem 0rem 0;
+  width: 8rem;
+  max-width: 95%;
+  border-radius: 14px;
+  text-align: center;
+}
+  
 .contact-stats {
   font: inherit;
   padding: 0.4rem;
@@ -57,18 +70,18 @@
 }
 .contact-stats__head_1 {
   padding: 0rem;
-  margin: -8.4rem 0rem 0.2rem 22rem;
+  margin: -8.1rem 0rem 0.2rem 22rem;
   font-size: 1.6em;
 }
   .contact-stats__body {
     padding: 0rem;
-    margin: 0rem 5rem 0rem 6.0rem;
-    font-size: 4.2em;
+    margin: 0rem 5rem 0rem 3.0rem;
+    font-size: 4.0em;
   }
 
   .contact-stats__body_1 {
     padding: 0rem;
-    margin: 0rem 5rem 0rem 25.6rem;
-    font-size: 4.2em;
+    margin: 0rem 5rem 0rem 23.6rem;
+    font-size: 4.0em;
   }
   
